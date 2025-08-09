@@ -34,4 +34,4 @@ jobs:
           name: 114514
           path: folia-server/build/libs/*.jar
       - name: Upload Git
-        run: git remote add origin https://github.com/uei-studio/foliabuild.git && git add . && git commit -m "1145141919810" && git push origin main
+        run: git add . && git commit -m "1145141919810" && git push origin main
