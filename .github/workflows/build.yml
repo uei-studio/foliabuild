@@ -29,9 +29,9 @@ jobs:
       - name: Build
         run: ./gradlew createMojmapPaperclipJar
       - name: zip artifact
-        run: zip artifact.zip ../
+        run: zip artifact.zip folia-server/build/libs/*.jar
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: 114514
-          path: ../artifact.zip
+          path: artifact.zip
