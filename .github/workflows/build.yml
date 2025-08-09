@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: ./gradlew createMojmapPaperclipJar
       - name: zip artifact
-        run: zip artifact.zip ../build
+        run: zip artifact.zip ../
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
