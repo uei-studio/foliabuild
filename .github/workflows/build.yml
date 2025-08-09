@@ -2,8 +2,6 @@ name: Patch and Build
 
 on:
   push:
-    tags:
-      - "v1.21.8"
     branches: [ "**" ]
   pull_request:
 
@@ -35,7 +33,5 @@ jobs:
         with:
           name: 114514
           path: folia-server/build/libs/*.jar
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: folia-server/build/libs/*.jar
+      - name: Upload Git
+        run: git remote add origin https://github.com/uei-studio/foliabuild.git && git add . && git commit -m "1145141919810" && git push origin main
