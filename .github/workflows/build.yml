@@ -25,7 +25,7 @@ jobs:
       - name: Apply Patches
         run: ./gradlew applyAllPatches
       - name: Build
-        run: ./gradlew createReobfBundlerJar
+        run: ./gradlew createReobfBundlerJar --info
       - name: Build
         run: zip artifact.zip ../build
       - name: Upload a Build Artifact
