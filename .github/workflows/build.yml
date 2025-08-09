@@ -33,5 +33,3 @@ jobs:
         with:
           name: 114514
           path: folia-server/build/libs/*.jar
-      - name: Upload Git
-        run: git add . && git commit -m "1145141919810" && git push origin main
