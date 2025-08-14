@@ -31,5 +31,5 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
-          name: 114514
+          name: folia-server
           path: folia-server/build/libs/*.jar
