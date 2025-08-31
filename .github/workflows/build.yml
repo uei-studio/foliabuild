@@ -6,12 +6,12 @@ on:
       environment:
         description: "set running OS"
         required: true
-        default: "Ubuntu"
+        default: "ubuntu-latest"
         type: choice
         options:
-          - Windows
-          - MacOS
-          - Ubuntu
+          - windows-latest
+          - macos-latest
+          - ubuntu-latest
 
 jobs:
   build:
