@@ -9,8 +9,13 @@ jobs:
   build:
     # Only run on PRs if the source branch is on someone else's repo
     if: ${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
+      - name: check OS
+        run: echo "运行在 ${{ matrix.os }}"
       - name: Checkout Git Repository
         uses: actions/checkout@v4
       - name: Set up JDK
@@ -28,12 +33,8 @@ jobs:
         run: ./gradlew createMojmapBundlerJar
       - name: Build
         run: ./gradlew createMojmapPaperclipJar
-      - name: zip backup file
-        run: zip -r backup.zip .
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: folia-server
           path: folia-server/build/libs/*.jar
-          name: backup
-          path: backup.zip
