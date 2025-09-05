@@ -9,7 +9,6 @@ on:
         default: "ubuntu-latest"
         type: choice
         options:
-          - windows-latest
           - macos-latest
           - ubuntu-latest
 
@@ -41,3 +40,8 @@ jobs:
         with:
           name: folia-server
           path: folia-server/build/libs/*.jar
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: folia-backup
+          path: *
